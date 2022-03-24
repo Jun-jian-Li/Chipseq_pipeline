@@ -1,0 +1,1 @@
+cmd = 09_anno_motif/02_motif/cKO_homer_peaks.tmp mm10 09_anno_motif/02_motif -len 8,10,12

@@ -1,0 +1,27 @@
+dir:
+  raw_data_dir: 01_raw_data
+  clean_data_dir: 02_trim_data
+  cut_base_dir: 03_cut_base
+  sam_dir: 04_sam
+  sort_bam_dir: 05_sort_bam
+  dup_dir: 06_rm_dup_bam
+  macs2_call_peak: 07_macs2_peaks_calling
+  bw_file: 08_bw
+  raw_data_qc_result_dir: result/01_raw_data_qc
+  clean_data_qc_result_dir: result/02_clean_data_qc
+  cut_data_qc_result_dir: result/03_cut_data_qc
+  align_qc_dir: result/04_bam_qc
+
+reference:
+  mouse_reference: /home/ljj/Genome/mouse_mm10/reference/mm10
+  human_reference: /home/ljj/Genome/human_hg19/reference/hg19
+
+para:
+  trim_length: 30
+  trim_quality: 20
+  trim_stringency: 3
+  cut_left_base: 10
+  cut_right_base: 10
+  bam_quality: 30
+
+
