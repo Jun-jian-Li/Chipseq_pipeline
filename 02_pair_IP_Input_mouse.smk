@@ -55,7 +55,7 @@ rule all:
           sort_bam_dup=expand(os.path.join(config["dir"]["dup_dir"],"{sample}_{group}_dup.sort.bam"),sample=samples,group=groups),
           sort_bam_bai = expand(os.path.join(config["dir"]["dup_dir"],"{sample}_{group}_dup.sort.bam.bai"),sample=samples,group=groups),
           #peaks calling
-          peaks = expand(os.path.join(config["dir"]["macs2_call_peak"],"{sample}_peaks.narrowPeak"),sample=samples),
+          peaks = expand(os.path.join(config["dir"]["macs2_call_peak"],"{sample}_peaks_narrowPeak"),sample=samples),
           #bam to bw
           bw = expand(os.path.join(config["dir"]["bw_file"],"{sample}_{group}.bw"),sample=samples,group=groups)
 
@@ -191,7 +191,7 @@ rule peaks_calling:
           treat_bam_dup = os.path.join(config["dir"]["dup_dir"],"{sample}_IP_dup.sort.bam"),
           control_bam_dup = os.path.join(config["dir"]["dup_dir"],"{sample}_Input_dup.sort.bam")
      output:
-          peaks = os.path.join(config["dir"]["macs2_call_peak"],"{sample}_peaks.narrowPeak")
+          peaks = os.path.join(config["dir"]["macs2_call_peak"],{sample}_peaks_narrowPeak")
      params:
           names = "{sample}",
           species = "mm"

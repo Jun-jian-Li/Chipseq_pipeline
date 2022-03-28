@@ -41,7 +41,7 @@ rule all:
           sort_bam_bai = expand(os.path.join(config["dir"]["dup_dir"],"{sample}_IP_dup.sort.bam.bai"),sample=samples),
         
           # peaks calling
-          peaks = expand(os.path.join(config["dir"]["macs2_call_peak"],"{sample}_peaks.narrowPeak"),sample=samples),
+          peaks = expand(os.path.join(config["dir"]["macs2_call_peak"],"{sample}_peaks_narrowPeak"),sample=samples),
           
           #bam to bw
           bw = expand(os.path.join(config["dir"]["bw_file"],"{sample}_IP.bw"),sample=samples)
@@ -167,7 +167,7 @@ rule peaks_calling:
      input:
           treat_bam_dup = os.path.join(config["dir"]["dup_dir"],"{sample}_IP_dup.sort.bam")
      output:
-          peaks = os.path.join(config["dir"]["macs2_call_peak"],"{sample}_peaks.narrowPeak")
+          peaks = os.path.join(config["dir"]["macs2_call_peak"],"{sample}_peaks_narrowPeak")
      params:
           names = "{sample}",
           species = "hs"
